@@ -15,7 +15,7 @@ To write a logic program to design a circuit like half adder and half subtractor
 
 ### Program:
 
-
+```
 and(0,0,0).
 and(0,1,0).
 and(1,1,1).
@@ -42,7 +42,7 @@ fulladder(A, B, Cin, Sum, Cout) :-
     halfadder(S1, Cin, Sum, C2),      
     or(C1, C2, Cout).
 
-
+```
 
 
 
