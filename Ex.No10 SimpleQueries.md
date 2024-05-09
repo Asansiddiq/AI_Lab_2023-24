@@ -1,6 +1,6 @@
 # Ex.No: 10  Logic Programming –  Simple queries from facts and rules
-### DATE:                                                                            
-### REGISTER NUMBER : 
+### DATE:   9/5/2024                                                                         
+### REGISTER NUMBER : 212221060169
 ### AIM: 
 To write a prolog program to find the answer of query. 
 ###  Algorithm:
@@ -21,9 +21,15 @@ Construct the FOL representation for the following sentences <br>
 5.	 Bill eats peanuts  <br> 
    Convert into clause form and Prove that John like Apple by using Prolog. <br> 
 ### Program:
-
+```
+:- discontiguous likes/2. likes(john, X) :- food(X). food(apples). food(chicken). eats(sue, X) :-
+eats(bill, X). eats(bill, peanuts). likes(john, apples)
+ ```
 
 ### Output:
+
+![image](https://github.com/Asansiddiq/AI_Lab_2023-24/assets/160508575/aa9f58d0-4d4f-4b0d-b454-23b84b4b888c)
+
 
 ### Task 2:
 Consider the following facts and represent them in predicate form: <br>              
@@ -34,18 +40,31 @@ Consider the following facts and represent them in predicate form: <br>
 Convert the facts in predicate form to clauses and then prove by resolution: “Steve likes BK301 course”<br> 
 
 ### Program:
-
+```
+likes(steve,X):- easycourse(X). hard(sciencecourse). easycourse(X):- course(X,dept(havefun)).
+course(bk301,dept(havefun)).
+```
 
 ### Output:
+
+![image](https://github.com/Asansiddiq/AI_Lab_2023-24/assets/160508575/f075a753-1ac6-428d-a674-b5b7c871ad02)
+
 
 ### Task 3:
 Consider the statement <br> 
 “This is a crime for an American to sell weapons to hostile nations. The Nano , enemy of America has some missiles and its missiles were sold it by Colonal West who is an American” <br> 
 Convert to Clause form and prove west is criminal by using Prolog.<br> 
 ### Program:
-
+```
+american(west). enemy(nano, america). owns(nano, missile). criminal(X) :- american(X),
+weapon(Y), hostile(Z), sells(X, Y, Z). hostile(nano). sells(west, Y, nano) :- weapon(Y),
+owns(nano, Y). weapon(missile).
+```
 
 ### Output:
+
+![image](https://github.com/Asansiddiq/AI_Lab_2023-24/assets/160508575/74f3faba-9bc0-4152-9816-f3cfcab6d107)
+
 
 ### Result:
 Thus the prolog programs were executed successfully and the answer of query was found.
